@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+/* Clarity design tokens (master plan → Design system). Utilities: bg-brand, text-ink, border-line … */
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #0b5c3e; /* --green-700: primary buttons, links, accents */
+  --color-ink: #0e1f19; /* headings, dark sections, footer */
+  --color-ink-2: #16302a; /* raised surfaces on dark */
+  --color-body: #3a4e46; /* --text: body copy */
+  --color-body-strong: #24372f;
+  --color-muted: #4f6159; /* secondary text, captions */
+  --color-soft: #eef6f1; /* --surface-soft: soft cards, hero background */
+  --color-tint: #f7fbf9; /* highlighted rows, accent cards */
+  --color-faq: #f7faf8;
+  --color-gray-soft: #f4f6f5; /* table headers, segmented controls */
+  --color-placeholder: #e3eee8; /* image placeholders */
+  --color-placeholder-strong: #d6e7dd;
+  --color-line: #dce8e1; /* --border: card and table borders */
+  --color-line-strong: #cfe3d7;
+  --color-rule: #e6eee9; /* hairlines between rows */
+  --color-mint: #8fd3b0; /* accents on dark backgrounds */
+  --color-on-dark: #cde7da;
+  --color-on-dark-muted: #b5c7be;
+  --color-dark-rule: #24403a;
+  --color-dark-line: #2e5a49;
+  --color-warn-bg: #fbf7f5;
+  --color-warn-line: #e6d9d3;
+  --color-warn: #9a3b2e;
+
+  --radius-btn: 12px;
+  --radius-card: 22px;
+  --radius-panel: 28px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  /* Long German compounds (Hinzurechnungsbesteuerung) must break on phones instead of overflowing. */
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+  }
+  :lang(de) :is(h1, h2, h3) {
+    hyphens: auto;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+  button {
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility h1 {
+  font-size: clamp(36px, 4.6vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+@utility h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+@utility eyebrow {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Long-form copy from MDX articles. */
+@utility prose-article {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--color-body-strong);
+
+  & h2 {
+    margin: 12px 0 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--color-ink);
+  }
+  & h3 {
+    margin: 8px 0 0;
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--color-ink);
+  }
+  & p,
+  & ul,
+  & ol {
+    margin: 0;
+  }
+  & ul {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+  & ol {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+  & a {
+    color: var(--color-brand);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

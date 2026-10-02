@@ -1,0 +1,60 @@
+---
+id: malta-5-percent
+title: "Malta's 5% explained: how the 6/7 refund really works"
+description: Malta charges companies 35%, then refunds most of it to shareholders. The result is a 5% effective rate on distributed trading profits — if the company is really run from Malta.
+topic: Company
+minutes: 7
+author: "[Author]"
+reviewer: "[Malta accountant], warrant no. [X]"
+updated: 2026-10-02
+sources:
+  - label: Dr. Werner, tax advantages Malta 2026
+    url: https://www.drwerner.com/en/tax-advantages-malta-relocating-business.md
+  - label: KPMG Malta on FITWI
+    url: https://kpmg.com/mt/en/insights/2025/08/malta-introduces-a-new-final-tax.html
+---
+
+<Figure label="Diagram: company tax → dividend → refund" />
+
+## The mechanics in four steps
+
+<StepList steps={[
+  { heading: 'Company pays 35%', body: 'On its trading profit.' },
+  { heading: 'Dividend is paid', body: 'The remaining profit goes to the shareholder.' },
+  { heading: 'Refund claim', body: 'The shareholder claims 6/7 of the tax paid.' },
+  { heading: 'Refund paid', body: "Malta's tax authority pays it to the shareholder." },
+]} />
+
+## A worked example
+
+<DataTable
+  caption="Malta refund on €100,000 trading profit"
+  head={['Step', '€']}
+  rows={[
+    ['Trading profit', '100,000'],
+    ['Corporate tax at 35%', '−35,000'],
+    ['Dividend', '65,000'],
+    ['Refund to shareholder (6/7 × 35,000)', '+30,000'],
+    ['Net tax · effective rate', '5,000 · 5%'],
+  ]}
+  highlight={[4]}
+/>
+
+## When it doesn't work
+
+If you still live in Germany, Germany can tax the company's profits under its CFC rules or treat the company as German-managed. The 5% only holds when you and the company's management are really in Malta. See <PageLink to="guideLeavingGermany">Leaving Germany</PageLink>.
+
+<CalculatorCard />
+
+## FAQ
+
+<FaqList items={[
+  { q: 'Is the refund system legal under EU law?', a: 'Yes. It is part of Maltese tax law and has been in place since before Malta joined the EU in 2004.' },
+  { q: 'Who receives the refund?', a: 'The shareholder — a person or a holding company — not the trading company itself.' },
+  { q: 'Do I pay tax on the dividend as a person?', a: 'That depends on your residence and domicile. We model it individually.' },
+]} />
+
+<Related items={[
+  { to: 'guideCompany', tag: 'Pillar guide', heading: 'The full Malta company guide' },
+  { to: 'costEstimator', tag: 'Tool', heading: 'What it costs per year' },
+]} />

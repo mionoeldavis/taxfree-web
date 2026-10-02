@@ -1,0 +1,2 @@
+# Cloudflare Pages. Root goes to the German site (default locale); the static chooser at / is the fallback.
+/  /de/  302
